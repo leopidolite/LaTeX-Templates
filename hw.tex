@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+\usepackage{hyperref}
+\usepackage{empheq}
+\usepackage{float}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath,amssymb} 
+\usepackage{fourier} 
+\usepackage{xcolor}
+\definecolor{darkblue}{RGB}{0,51,102} 
+\newcommand{\D}[2]{\frac{\mathrm{D}#1}{\mathrm{D}#2}}
+
+\newcommand{\eqset}[1]{
+\begin{spreadlines}{8pt}
+\begin{empheq}[left =\empheqlparen]{equation}
+\begin{aligned}
+#1
+\end{aligned}
+\end{empheq}
+\end{spreadlines}
+}
+\usepackage{fontspec}
+\setmainfont{QTOptimum} 
+\newfontfamily\headerfont{crimsonpro}[BoldFont=* Bold] 
+
+\usepackage{physics}
+\usepackage{siunitx}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+\usepackage{slashed}
+\usepackage{geometry}
+\geometry{top = 2.5cm, right = 2cm, left = 2cm, bottom = 2.5cm} 
+
+\usepackage{titlesec}
+\usepackage{tabto}
+\renewcommand{\thesubsection}{\alph{subsection}} 
+
+\titleformat{\section}{\headerfont\bfseries\color{darkblue}\Large}{\thesection}{1em}{}
+\titleformat{\subsection}{\headerfont\bfseries\color{darkblue}\large}{\thesubsection}{1em}{}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\newcommand{\entrytitle}{[Class] HW [num] }
+\newcommand{\entrydate}{\today}
+\fancyhead[C]{%
+    \colorbox{darkblue}{%
+        \parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+            \headerfont\bfseries\color{white}
+            \entrytitle \hfill \entrydate
+        }%
+    }%
+}
+\fancyfoot[C]{\thepage}
+\newcommand{\eq}[1]{\begin{equation} #1 \end{equation}}
+\newtcolorbox{customBox}{
+    colback = white, 
+    colframe = black, 
+    boxrule = 0pt, 
+    leftrule = 6pt,
+    sharp corners
+}
+\newcommand{\avg}[1]{\langle #1 \rangle }
+
+\newcommand{\defn}[1]{\begin{customBox}#1\end{customBox}}
+\newcommand{\thm}[1]{%
+    \begin{customBox}%
+        \ttfamily%
+        #1%
+    \end{customBox}%
+}
+\newcommand{\ex}[1]{\begin{customBox}\textit{Example:} #1\end{customBox}}
+\DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
+\newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}}
+
+\begin{document}
+\section{}
+
+\defn{[Problem Statement]]}
+[solution]
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{}
+\end{figure}
+
+
+
+\end{document}
