@@ -1,13 +1,17 @@
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb} 
 \usepackage{svg}
-\usepackage{fontspec}
+% \usepackage{fontspec}
 \usepackage{mathrsfs} 
+
+% 1. FIXED: Loaded xcolor with dvipsnames BEFORE tcolorbox
+\usepackage[dvipsnames]{xcolor} 
 \usepackage[most]{tcolorbox} 
+
 \usepackage{microtype} 
-\usepackage{xcolor}
 \usepackage{cite}
-\usepackage{hyperref}
+% 2. FIXED: Removed the first \usepackage{hyperref} from here
+
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
 \numberwithin{equation}{section}
@@ -41,10 +45,9 @@
     }
 }
 
-
 \fancyfoot[C]{\thepage}
 \usepackage{booktabs}
-\usepackage[dvipsnames]{xcolor}
+% 3. FIXED: Removed the second duplicate \usepackage[dvipsnames]{xcolor} from here
 
 \newcommand{\entrytitle}{Notes}
 \newcommand{\entrydate}{\today }
@@ -64,15 +67,15 @@
 
 \begin{document}
 \section{[Section]}
+
+
 Text 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{}
-    \caption{[Caption]}
-    \label{fig:placeholder}
-\end{figure}
-
-
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.5\linewidth]{}
+%     \caption{[Caption]}
+%     \label{fig:placeholder}
+% \end{figure}
 
 \bibliographystyle{plain}
 \bibliography{biblio}
