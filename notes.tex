@@ -4,13 +4,11 @@
 % \usepackage{fontspec}
 \usepackage{mathrsfs} 
 
-% 1. FIXED: Loaded xcolor with dvipsnames BEFORE tcolorbox
 \usepackage[dvipsnames]{xcolor} 
 \usepackage[most]{tcolorbox} 
 
 \usepackage{microtype} 
 \usepackage{cite}
-% 2. FIXED: Removed the first \usepackage{hyperref} from here
 
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
@@ -47,7 +45,6 @@
 
 \fancyfoot[C]{\thepage}
 \usepackage{booktabs}
-% 3. FIXED: Removed the second duplicate \usepackage[dvipsnames]{xcolor} from here
 
 \newcommand{\entrytitle}{Notes}
 \newcommand{\entrydate}{\today }
